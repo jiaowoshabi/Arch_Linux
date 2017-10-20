@@ -14,7 +14,9 @@ I mainly followed the offical guideline with only few tweaks different.
 4. Partition the disk
 	- Used fdisk instead of gdisk
 		>/dev/sda1   linux filesystem    `use 'a' command to flag it as bootable`
+
 		>/dev/sda2 	 swap				  'use 'type' command to set the type of this partition. code: 82'
+		
 		>/dev/sda3    linux filesystem
 
 	- make ext4 filesystem
