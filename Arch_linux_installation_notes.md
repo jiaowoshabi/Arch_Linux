@@ -51,6 +51,34 @@ I mainly followed the offical guideline with only few tweaks different.
 	```
 	grub-mkconfig -o /boot/grub/grub.cfg
 	```
+13. Reboot
+        - Before reboot the system, we need manually unmount all partitions with the following command.
+        ```
+        umount -R /mnt
+        ```
 
+        - Reboot system
+        ```
+        reboot
+        ```
+14. Add unprivileged user, "archie"
+        ```
+        useradd -m -G wheel -s /bin/bash archie
+        ```
 
+15. Install *sudo*
+        - Install "sudo" package in root mode
+        ```
+        pacman -S sudo
+        ```
+        - Add user "archie" to configuration file /etc/sudoers by using *visudo*
+        ```
+        visudo
+        ```
+        - Add the following line under "User privilege specification"
+        ```
+        archie ALL=(ALL) ALL
+        ```
+16. Install display server
+        
 
